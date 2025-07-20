@@ -1,16 +1,19 @@
-package org.example
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
+    println("Setup successful!")
+    println("Welcome to the Task Manager!")
+    println("Here are your tasks:")
+    println()
 
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
+    val tasks = mutableListOf(
+        Task("Submit assignment",    isDone = true),
+        Task("Clean the house",      isDone = false),
+        Task("Buy groceries",        isDone = false)
+    )
+
+    tasks.forEach { task ->
+        val statusIcon = if (task.isDone) "✅" else "❌"
+        println("$statusIcon ${task.title}")
     }
 }
+data class Task(val title: String, var isDone: Boolean)
