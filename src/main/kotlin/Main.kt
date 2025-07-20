@@ -6,8 +6,8 @@ fun main() {
     println()
 
     val tasks = mutableListOf(
-        Task("Submit assignment",    isDone = true),
-        Task("Clean the house",      isDone = false),
+        Task("Play a Football match",    isDone = true),
+        Task("Watch a movie",      isDone = false),
         Task("Buy groceries",        isDone = false)
     )
 
